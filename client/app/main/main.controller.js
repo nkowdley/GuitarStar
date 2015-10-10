@@ -22,15 +22,15 @@ angular.module('guitarStarApp')
   }
 
   function showDrum (){
-    for(var i = 0; i < tabs.length();i++){
-      $scope.num = $scope.tabs[i];
-      $timeout(callAtTimeout, 3000);
+    $scope.counter = 0;
+    $scope.onTimeout = function(){
+      $scope.value = $scope.tabs[$scope.counter];
+      console.log($scope.value);
+      $scope.counter++;
+        if ($scope.counter < $scope.tabs.length) {
+            mytimeout = $timeout($scope.onTimeout,1000);
+        }
     }
+    var mytimeout = $timeout($scope.onTimeout,1000);
   }
-
-  function callAtTimeout() {
-    console.log("Timeout occurred");
-  }
-
-
 });
