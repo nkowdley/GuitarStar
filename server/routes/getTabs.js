@@ -39,7 +39,7 @@ router.get('/', function(req, res, next) {
     var json=JSON.parse(body);
     var arr=new Array();
     console.log("hi");
-    for (var i=0;i<30;i++)
+    for (var i=0;i<60;i++)
     {
       arr.push(Math.floor(Math.random() * (6 - 1 + 1)) + 1);
     }
