@@ -10,9 +10,11 @@ router.post('/', function(req, res, next) {
   //get post variables
   var user=req.body.user; //username
   var action=req.body.action; //action
+  console.log(action);
+  console.log(user);
   //var song=req.body.song; //song name
   //find the user and push an update to their myo string
-  var query = {'username':user};
+  var query = {'name':user};
   db.collection('users').findOneAndUpdate(query, {$push: {actions: action}}, {upsert:false}, function(err, doc){
     if (err)
     {
