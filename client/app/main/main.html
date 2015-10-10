@@ -10,12 +10,13 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Features:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in main.awesomeThings">
-        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}</a></li>
-      </ul>
-    </div>
+    Enter Your Name: <input type="text" class="form-control" ng-model="name">
+  </div>
+  <div class="row">
+    Enter Your Song: <input type="text" class="form-control" ng-model="song">
+  </div>
+  <div class="row">
+    <button type="button" class="btn btn-info" ng-click="createUser()">Add Slide</button>
   </div>
 </div>
 
