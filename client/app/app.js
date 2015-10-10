@@ -5,7 +5,8 @@ angular.module('guitarStarApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ngAudio'
 ])
   .config(function($routeProvider, $locationProvider) {
     $routeProvider
