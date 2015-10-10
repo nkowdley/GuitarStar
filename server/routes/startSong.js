@@ -15,6 +15,7 @@ router.post('/', function(req, res, next) {
     actions: [], //empty actions
   };
     db.collection('users').insert(newUsers);
+    res.send("ok");
 });
 
 module.exports = router;
