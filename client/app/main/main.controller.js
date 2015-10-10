@@ -6,20 +6,17 @@ angular.module('guitarStarApp')
 
   $scope.createUser = function(){
     $http.post('/startSong', $scope.User)
-            .success(function(data) {
+            .then(function(data) {
                 $scope.info = data;
                 console.log(data);
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-    });
+            });
   }
 
   $scope.getTabs = function(){
     var requestUrl = '/getTabs?songName=' + $scope.User.songName;
     $http.get(requestUrl)
     .then(function(data){
-      $scope.tabs = data;
+      $scope.tabs = data["tabs"];
     });
   }  
 });
