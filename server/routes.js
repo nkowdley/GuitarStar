@@ -13,6 +13,7 @@ module.exports = function(app) {
   app.use('/getTabs', require('./routes/getTabs'));
   app.use('/myoTest', require('./routes/myoTest'));
   app.use('/postMyo', require('./routes/postMyo'));
+  app.use('/score', require('./routes/score'));
   app.use('/startSong', require('./routes/startSong'));
   app.use('/getTabsTest', require('./routes/getTabsTest'));
   // All undefined asset or api routes should return a 404
