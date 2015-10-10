@@ -15,8 +15,8 @@ angular.module('guitarStarApp')
   $scope.getTabs = function(){
     var requestUrl = '/getTabs?songName=' + $scope.User.songName;
     $http.get(requestUrl)
-    .then(function(data){
-      $scope.tabs = data["tabs"];
+    .then(function(response){
+      $scope.tabs = response.data["tabs"];
     });
   }  
 });
