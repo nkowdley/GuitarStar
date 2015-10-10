@@ -1,6 +1,6 @@
 'use strict';
 angular.module('guitarStarApp')
-.controller('MainController',function($scope,$http){
+.controller('MainController',function($scope,$http,$timeout){
   var self = this;
   $scope.User = {};
 
@@ -17,6 +17,20 @@ angular.module('guitarStarApp')
     $http.get(requestUrl)
     .then(function(response){
       $scope.tabs = response.data["tabs"];
+      showDrum();
     });
-  }  
+  }
+
+  function showDrum (){
+    for(var i = 0; i < tabs.length();i++){
+      $scope.num = tabs[i];
+      $timeout(callAtTimeout, 3000);
+    }
+  }
+
+  function callAtTimeout() {
+    console.log("Timeout occurred");
+  }
+
+
 });
