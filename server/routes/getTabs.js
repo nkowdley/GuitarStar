@@ -40,9 +40,15 @@ router.get('/', function(req, res, next) {
     {
       var json=JSON.parse(body);
       //console.log(response.statusCode, json.tracks.items[0].preview_url);
+      //make random numbers to fill in the tabs:
+      var arr=new Array();
+      for (var i=0;i<30;i++)
+      {
+        arr.push(Math.floor(Math.random() * (6 - 1 + 1)) + 1);
+      }
       var song={
         name: find,
-        tabs: ["1","2","3","4","5","6","1"],
+        tabs: arr,
         spotify: json.tracks.items[0].preview_url
       };
       db.collection('tabs').insert(song);//insert the song for the user
@@ -56,6 +62,6 @@ router.get('/', function(req, res, next) {
       console.log("Error:(err)");
       return next(err);
     }});
-});
+  });
 
-module.exports = router;
+  module.exports = router;
