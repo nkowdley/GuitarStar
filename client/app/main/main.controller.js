@@ -23,7 +23,7 @@ angular.module('guitarStarApp')
 
   function showDrum (){
     for(var i = 0; i < tabs.length();i++){
-      $scope.num = tabs[i];
+      $scope.num = $scope.tabs[i];
       $timeout(callAtTimeout, 3000);
     }
   }
