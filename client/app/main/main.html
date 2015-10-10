@@ -23,13 +23,15 @@
     {{notes}}
     </div>
   </div>-->
-  <div class="row">
-    <div class="col-md-2">1</div>
-    <div class="col-md-2">2</div>
-    <div class="col-md-2">3</div>
-    <div class="col-md-2">4</div>
-    <div class="col-md-2">5</div>
-    <div class="col-md-2">6</div>
+  <div ng-repeat="num in tabs track by $index">
+    <div class="row">
+      <div class="col-md-2" ng-class="{'color:red': num == 1}">1</div>
+      <div class="col-md-2" ng-class="{'color:blue': num == 2}">2</div>
+      <div class="col-md-2" ng-class="{'color:green': num == 3}">3</div>
+      <div class="col-md-2" ng-class="{'color:yellow': num == 4}">4</div>
+      <div class="col-md-2" ng-class="{'color:violet': num == 5}">5</div>
+      <div class="col-md-2" ng-class="{'color:gray': num == 6}">6</div>
+    </div>
   </div>
 </div>
 
