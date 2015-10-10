@@ -1,7 +1,6 @@
 'use strict';
-(function() {
-
-function MainController($scope, $http) {
+angular.module('guitarStarApp')
+.controller('MainController',function($scope,$http){
   var self = this;
 
   $scope.createUser = function(){
@@ -13,9 +12,5 @@ function MainController($scope, $http) {
             .error(function(data) {
                 console.log('Error: ' + data);
     });
-}
-
-angular.module('guitarStarApp')
-  .controller('MainController', MainController);
-
-})();
+}  
+});
