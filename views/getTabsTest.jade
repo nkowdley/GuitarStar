@@ -1,12 +1,19 @@
 extends layout
 
 block content
-  h1 hello
-  p Welcome to Songs
+h1 hello
+p Welcome to Songs
+form(action="getTabs", method="get", )
+label song:
+input(type="text", name="songName")
+br
+input(type="submit", value="Find this song")
+br
+extends layout
 
-  form(action="getTabs", method="get", )
-      label song:
-      input(type="text", name="songName")
-      br
-      input(type="submit", value="Find this song")
-      br
+form(action="getTabs", method="post", )
+label post:
+input(type="text", name="test")
+br
+input(type="submit", value="Do the post")
+br
