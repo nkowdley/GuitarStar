@@ -5,6 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   //get post variables
   var test=req.body.test; //username
+  console.log(test);
   res.send(test);
 
 });
