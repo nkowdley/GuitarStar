@@ -14,6 +14,7 @@ mongoose.connect('mongodb://localhost/guitar', function(err) {
   }
 });
 
+//make db connection
 var db=mongoose.connection;
 
 //express stuff
