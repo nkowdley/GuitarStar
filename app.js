@@ -4,10 +4,22 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+//connect to a mongo database named guitar
+mongoose.connect('mongodb://localhost/guitar', function(err) {
+  if(err) {
+    console.log('MONGO CONNECTION ERROR', err);
+  } else {
+    console.log('MONGO CONNECTION SUCCESSFUL');
+  }
+});
 
+var db=mongoose.connection;
+
+//express stuff
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
+var postMyo = require('./routes/postMyo')
 var app = express();
 
 // view engine setup
