@@ -18,8 +18,8 @@ angular.module('guitarStarApp')
   $scope.getTabs = function(){
     $http.get('/getTabs',$scope.User.songName)
     .success(function(data){
-      $scope.tab = data;
-      $scope.tab = $scope.tab["tabs"];
+      $scope.tabs = data;
+      $scope.tabs = $scope.tabs["tabs"];
     })
     .error(function(data){
       console.log('Error: ' + data);
