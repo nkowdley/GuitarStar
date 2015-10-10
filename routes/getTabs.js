@@ -7,7 +7,7 @@ var ObjectId = require('mongoose').Types.ObjectId; //setup type objectId
 /* GET home page. */
 router.get('/', function(req, res, next) {
 //find in the database
-var find=req.body.songName;
+var find=req.query['songName'];
 console.log(find);
   db.collection('tabs').findOne({name:find},function (err, song) {
     if (err)
