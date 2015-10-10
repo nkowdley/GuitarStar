@@ -22,6 +22,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var postMyo = require('./routes/postMyo');
 var getTabs = require('./routes/getTabs');
+var myoTest = require('./routes/myoTest');
 var app = express();
 
 // view engine setup
@@ -39,6 +40,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/getTabs', getTabs);
+app.use('/myoTest', myoTest);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
