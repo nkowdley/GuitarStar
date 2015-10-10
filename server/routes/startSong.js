@@ -15,7 +15,7 @@ router.post('/', function(req, res, next) {
     actions: [], //empty actions
   };
   var query={name:req.body.name};
-  db.collection('users').findOneAndUpdate(query,{song_name:req.body.songName,score:0,actions:[]} , {upsert:true}, function(err, doc){
+  db.collection('users').findOneAndUpdate(query,{song_name:req.body.songName,score:0,actions:[], name:req.body.name} , {upsert:true}, function(err, doc){
     if (err)
     {
       return res.send(500, { error: err });
