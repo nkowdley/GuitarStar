@@ -10,15 +10,17 @@ import config from './config/environment';
 import http from 'http';
 
 // Connect to MongoDB
-mongoose.connect(config.mongo.uri, config.mongo.options);
-mongoose.connection.on('error', function(err) {
-  console.error('MongoDB connection error: ' + err);
-  process.exit(-1);
+mongoose.connect('mongodb://localhost/guitar', function(err) {
+  if(err) {
+    console.log('MONGO CONNECTION ERROR', err);
+  } else {
+    console.log('MONGO CONNECTION SUCCESSFUL');
+  }
 });
 
+//make db connection
+var db=mongoose.connection;
 // Populate databases with sample data
-if (config.seedDB) { require('./config/seed'); }
-
 // Setup server
 var app = express();
 var server = http.createServer(app);
