@@ -10,6 +10,7 @@ import path from 'path';
 module.exports = function(app) {
   // Insert routes below
   app.use('/api/things', require('./api/thing'));
+  app.use('/init', require('./routes/init'));
   app.use('/getTabs', require('./routes/getTabs'));
   app.use('/myoTest', require('./routes/myoTest'));
   app.use('/postMyo', require('./routes/postMyo'));
