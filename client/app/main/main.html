@@ -16,8 +16,15 @@
     Enter Your Song: <input type="text" class="form-control" ng-model="User.songName">
   </div>
   <div class="row">
-    <button type="button" class="btn btn-info" ng-click="createUser()">Play Game!</button>
+    <button type="button" class="btn btn-info" ng-click="createUser();getTabs()">Play Game!</button>
+  </div>
+  <div class="row">
+    <div ng-repeat="notes in tabs">
+    {{notes}}
+    </div>
   </div>
 </div>
+
+
 
 <footer></footer>
