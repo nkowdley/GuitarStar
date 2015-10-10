@@ -35,14 +35,26 @@ router.get('/', function(req, res, next) {
       console.log(error);
       return next(error);
     }
-    console.log("hi");
     var json=JSON.parse(body);
+    //if the user enters a song that does not exist, play a fun song
+    console.log(json.tracks.total=='0');
+    //make the random tabs array
     var arr=new Array();
-    console.log("hi");
     for (var i=0;i<60;i++)
     {
       arr.push(Math.floor(Math.random() * (6 - 1 + 1)) + 1);
     }
+    if(json.tracks.total=='0')
+    {
+      var song1={
+        name: find,
+        tabs: arr,
+        spotify:"https://p.scdn.co/mp3-preview/3e0ab26bf59121debd9fc1bbab7b6931c2e1ca00"
+      };
+      res.send(song1);
+      return;
+    }
+    //if the song does exist,
     var song={
       name: find,
       tabs: arr,
