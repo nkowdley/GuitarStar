@@ -16,14 +16,15 @@ angular.module('guitarStarApp')
   }
 
   $scope.getTabs = function(){
-    $http.get('/getTabs',$scope.User.songName).then(function (response){
-      if(response.data.error){
-        $scope.tabs = null;
-      }
-      else {
-        console.log(response.data);
-        $scope.tabs = response.data;
-      }
+    var requestUrl = '/getTabs?songName=' + $scope.songName;
+    $http.get(requestUrl)
+    .success(function(data){
+      $scope.tabs = data;
+      $scope.tabs = $scope.tabs["tabs"];
     })
+    .error(function(data){
+      console.log('Error: ' + data);
+    })
+    
   }  
 });
