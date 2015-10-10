@@ -60,7 +60,6 @@ router.get('/', function(req, res, next) {
       tabs: arr,
       spotify: json.tracks.items[0].preview_url
     };
-    console.log("hi");
     db.collection('tabs').insert(song);//insert the song for the user
     res.send(song);
   });

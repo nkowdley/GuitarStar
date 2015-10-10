@@ -14,8 +14,13 @@ router.post('/', function(req, res, next) {
     score:0, //initial score is 0
     actions: [], //empty actions
   };
-    db.collection('users').insert(newUsers);
-    res.send("ok");
+  var query={name:req.body.name};
+  db.collection('users').findOneAndUpdate(query,{song_name:req.body.songName,score:0,actions:[]} , {upsert:true}, function(err, doc){
+    if (err)
+    {
+      return res.send(500, { error: err });
+    }
+  });
 });
 
 module.exports = router;
