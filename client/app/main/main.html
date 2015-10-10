@@ -19,7 +19,7 @@
     <button type="button" class="btn btn-info" ng-click="createUser();getTabs()">Play Game!</button>
   </div>
   <div class="row">
-    <div ng-repeat="notes in tabs">
+    <div ng-repeat="notes in tabs track by $index">
     {{notes}}
     </div>
   </div>
