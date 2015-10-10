@@ -2,9 +2,10 @@
 angular.module('guitarStarApp')
 .controller('MainController',function($scope,$http){
   var self = this;
+  $scope.User = {};
 
   $scope.createUser = function(){
-    $http.post('/startSong', {name: self.name, song_name: self.song})
+    $http.post('/startSong', $scope.User)
             .success(function(data) {
                 $scope.info = data;
                 console.log(data);
