@@ -28,8 +28,8 @@ router.get('/', function(req, res, next) {
         {
           //Im sorry.  Really sorry.
           //compare the users tabs to the expected tab output
-          var score=0;//initialize the score
           //var PrintString='';
+          var score=0;//initialize the score
           for(var i=0; i<user.actions.length; i++)
           {
             if (user.actions[i]==tab.tabs[i])
@@ -40,9 +40,9 @@ router.get('/', function(req, res, next) {
             {
               console.log(user.actions[i]+"!="+tab.tabs[i])
             }
-            //PrintString+=user.actions[i];
+            console.log(score);
           }
-          res.send(score);
+          res.send(score.toString());
         }
       });
     }
