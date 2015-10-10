@@ -23,6 +23,7 @@ var users = require('./routes/users');
 var postMyo = require('./routes/postMyo');
 var startSong = require('./routes/startSong');
 var getTabs = require('./routes/getTabs');
+var getTabsTest = require('./routes/getTabsTest');
 var myoTest = require('./routes/myoTest');
 var app = express();
 
@@ -44,6 +45,7 @@ app.use('/getTabs', getTabs);
 app.use('/myoTest', myoTest);
 app.use('/postMyo', postMyo);
 app.use('/startSong', startSong);
+app.use('/getTabsTest', getTabsTest);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
