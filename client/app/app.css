@@ -46,5 +46,10 @@
     border-radius: 25px; 
 }
 
+#bottom_drum {
+  position:relative;
+margin-top:100%;
+}
+
 
 
