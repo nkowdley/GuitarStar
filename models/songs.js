@@ -7,4 +7,4 @@ var schema = new mongoose.Schema({
   spotify: String,
 });
 
-module.exports = mongoose.model('songs', schema);
+module.exports = mongoose.model('tabs', schema);

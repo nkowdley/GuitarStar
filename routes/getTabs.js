@@ -2,7 +2,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var router = express.Router();
 var db=mongoose.connection;
-var users= require('../models/songs.js'); //mongodb for users
+var songs= require('../models/songs.js'); //mongodb for users
 var ObjectId = require('mongoose').Types.ObjectId; //setup type objectId
 /* GET home page. */
 router.get('/', function(req, res, next) {
