@@ -41,11 +41,11 @@ router.get('/', function(req, res, next) {
         }
         else
         {
-          console.log(user.actions[i]+"!="+tab.tabs[i])
+          console.log(user.actions[i]+"!="+tab.tabs[i]);
         }
       }
       score=score*2;
-      db.collection('users').findOneAndUpdate({name:name1},{score:score}, {upsert:false, new: true}, function(err, doc){
+      db.collection('users').findOneAndUpdate({name:name1},{name:name1,score:score,actions:'[]',song_name:''}, {upsert:false, new: true}, function(err, doc){
         if (err)
         {
           return res.send(500, { error: err });
