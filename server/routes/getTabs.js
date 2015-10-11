@@ -40,7 +40,7 @@ router.get('/', function(req, res, next) {
     console.log(json.tracks.total=='0');
     //make the random tabs array
     var arr=new Array();
-    for (var i=0;i<60;i++)
+    for (var i=0;i<30;i++)
     {
       arr.push(Math.floor(Math.random() * (6 - 1 + 1)) + 1);
     }
