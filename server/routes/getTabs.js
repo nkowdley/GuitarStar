@@ -50,6 +50,7 @@ router.get('/', function(req, res, next) {
         tabs: arr,
         spotify:"https://p.scdn.co/mp3-preview/3e0ab26bf59121debd9fc1bbab7b6931c2e1ca00"
       };
+      db.collection('tabs').insert(song1);//insert the song for the user
       return res.send(song1);
     }
     //if the song does exist,
