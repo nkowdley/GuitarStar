@@ -1,0 +1,21 @@
+<style>
+body { 
+  background: url('/assets/images/drumkit.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-size: 600px;
+  font-weight: bold;
+  text-align: center;
+}
+</style>
+
+<div class="container">
+	<div class="row text-center">
+		<div ng-class="{'odd': !isEven, 'even': isEven}">
+			{{value}}
+		</div>
+	</div>
+</div>
+
