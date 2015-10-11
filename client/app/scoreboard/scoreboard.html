@@ -1,7 +1,37 @@
+<style>
+	h1 
+	{ 
+		font-family: 'Press Start 2P';
+		font-weight: bold;
+		color: yellow;
+	}
+	h2 
+	{
+		font-family: 'Press Start 2P';
+		font-weight: bold;
+		color: white;
+	}
+	body 
+	{
+		background-color: black;
+	}
+	h3 
+	{
+		font-family: 'Press Start 2P';
+		color: white;
+	}
+}
+</style>
+<navbar></navbar>
 <div class="container">
-	 <div class="row">
+	 <div class="row text-center">
+	 	<h1>Your Score</h1>
+	 	<h2>{{score}}</h2>
+	 	<hr/>
+	 	<h1>High Scores</h1>
 	 	<div ng-repeat="item in leaderboard">
-	 		{{item}}
+	 		<h2>{{item.name}}</h2>
+	 		<h3>{{item.score}}</h3>
 	 	</div>
 	 </div>
  </div>
