@@ -46,49 +46,24 @@
     border-radius: 25px; 
 }
 
-#bottom_drum {
-  position:relative;
-margin-top:100%;
+.odd {
+  color: yellow;
 }
 
-#test{
-    margin-top: 25px;
-    font-size: 200px;
-    text-align: center;
-
-}
-@keyframes fadein {
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-@-moz-keyframes fadein { /* Firefox */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-@-webkit-keyframes fadein { /* Safari and Chrome */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-@-o-keyframes fadein { /* Opera */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity: 1;
-    }
+.even {
+  color: blue;
 }
 
+.center-div
+{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+}
 
 
