@@ -44,7 +44,8 @@ router.get('/', function(req, res, next) {
           console.log(user.actions[i]+"!="+tab.tabs[i]);
         }
       }
-      score=score*2;
+      //yolo
+      score=score*2;ad
       db.collection('users').findOneAndUpdate({name:name1},{name:name1,score:score,actions:'[]',song_name:''}, {upsert:false, new: true}, function(err, doc){
         if (err)
         {
