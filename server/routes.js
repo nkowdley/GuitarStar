@@ -17,7 +17,7 @@ module.exports = function(app) {
   app.use('/score', require('./routes/score'));
   app.use('/startSong', require('./routes/startSong'));
   app.use('/getTabsTest', require('./routes/getTabsTest'));
-//  app.use('/leaderboard', require('./routes/leaderboard'));
+  app.use('/leaderboard', require('./routes/leaderboard'));
   // All undefined asset or api routes should return a 404
   app.route('/:url(api|auth|components|app|bower_components|assets)/*')
   .get(errors[404]);
