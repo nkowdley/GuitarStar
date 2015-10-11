@@ -1,9 +1,7 @@
 <div class="container">
-	<div class="row">
-	    <button type="button" class="btn btn-info" ng-click="getScore()">Get Your Score!</button>
-	 </div>
 	 <div class="row">
-	 LOOK AT THE FLICK OF DA WRIST
-	 	{{score}}
+	 	<div ng-repeat="item in leaderboard">
+	 		{{item}}
+	 	</div>
 	 </div>
  </div>

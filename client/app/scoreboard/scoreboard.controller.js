@@ -6,12 +6,23 @@ angular.module('guitarStarApp')
   $scope.User.name = sharedProperties.getUsername();
   $scope.User.songName = sharedProperties.getSongName();
 
-  $scope.getScore = function(){
+  getScore();
+  getLeaderboard();
+
+  function getScore(){
     var requestUrl = '/score?name=' + $scope.User.name + '&songName=' + $scope.User.songName;
     $http.get(requestUrl)
     .then(function(response){
       $scope.score = response.data;
-      console.log(response)
+      console.log($scope.score);
+    })
+  };
+
+  function getLeaderboard(){
+    $http.get('/leaderboard')
+    .then(function(response){
+      $scope.leaderboard = response.data;
+      console.log($scope.leaderboard);
     })
   };
 
