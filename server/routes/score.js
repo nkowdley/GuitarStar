@@ -24,31 +24,31 @@ router.get('/', function(req, res, next) {
         {
           return res.send(500, { error: err });
         }
-        else
+        //Im sorry.  Really sorry.
+        //compare the users tabs to the expected tab output
+        //var PrintString='';
+        var score=0;//initialize the score
+        for(var i=0; i<user.actions.length; i++)
         {
-          //Im sorry.  Really sorry.
-          //compare the users tabs to the expected tab output
-          //var PrintString='';
-          var score=0;//initialize the score
-          for(var i=0; i<user.actions.length; i++)
+          if (user.actions[i]==tab.tabs[i])
           {
-            if (user.actions[i]==tab.tabs[i])
-            {
-              score++;
-            }
-            else
-            {
-              console.log(user.actions[i]+"!="+tab.tabs[i])
-            }
-            console.log(score);
+            score++;
           }
+          else
+          {
+            console.log(user.actions[i]+"!="+tab.tabs[i])
+          }
+          score=score*2;
+          db.collection('users').findOneAndUpdate({name:name},{score:score}, {upsert:false}, function(err, doc){
+            if (err)
+            {
+              return res.send(500, { error: err });
+            }
+          });
           res.send(score.toString());
         }
       });
     }
   });
 });
-
-
-
 module.exports = router;

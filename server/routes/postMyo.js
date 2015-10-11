@@ -8,7 +8,7 @@ var router = express.Router();
 /* Accept Post Request page. */
 router.post('/', function(req, res, next) {
   //get post variables
-  var user=req.body.user; //username
+  var user=req.body.name; //username
   var action=req.body.action; //action
   console.log(action);
   console.log(user);
