@@ -50,7 +50,7 @@ router.get('/', function(req, res, next) {
         {
           return res.send(500, { error: err });
         }
-        return res.send(score.toString());
+        res.send(score.toString());
       });
     });
   });
