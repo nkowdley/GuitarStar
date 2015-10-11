@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
     }
     if (song!==null)
     {
-      res.json(song);
+      return res.json(song);
     }
   });
   //if the song is not in the database, lets find it
@@ -37,7 +37,6 @@ router.get('/', function(req, res, next) {
     }
     var json=JSON.parse(body);
     //if the user enters a song that does not exist, play a fun song
-    console.log(json.tracks.total=='0');
     //make the random tabs array
     var arr=new Array();
     for (var i=0;i<30;i++)
@@ -51,8 +50,7 @@ router.get('/', function(req, res, next) {
         tabs: arr,
         spotify:"https://p.scdn.co/mp3-preview/3e0ab26bf59121debd9fc1bbab7b6931c2e1ca00"
       };
-      res.send(song1);
-      return;
+      return res.send(song1);
     }
     //if the song does exist,
     var song={
