@@ -45,7 +45,7 @@ router.get('/', function(req, res, next) {
         }
       }
       //yolo
-      score=score*2;ad
+      score=score*2;
       db.collection('users').findOneAndUpdate({name:name1},{name:name1,score:score,actions:'[]',song_name:''}, {upsert:false, new: true}, function(err, doc){
         if (err)
         {
