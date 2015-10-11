@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('guitarStarApp')
-  .controller('DrumsetController', function ($scope,$timeout,ngAudio,sharedProperties,$http) {
+  .controller('DrumsetController', function ($scope,$timeout,$location,ngAudio,sharedProperties,$http) {
 
 	    getTabs();
 	    function getTabs(){
@@ -37,5 +37,13 @@ angular.module('guitarStarApp')
 	        }
 	    }
 	    var mytimeout = $timeout($scope.onTimeout,1000);
-  }
+	}
+
+	$timeout(function() {
+        changeRoute('/scoreboard');
+    }, 32000);
+
+  function changeRoute(route){
+  	$location.path(route);
+  }  
   });

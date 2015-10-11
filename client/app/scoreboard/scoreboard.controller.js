@@ -7,11 +7,11 @@ angular.module('guitarStarApp')
   $scope.User.songName = sharedProperties.getSongName();
 
   $scope.getScore = function(){
-    var requestUrl = "/score?name=" + $scope.User.name + "&songName=" + $scope.User.songName;
+    var requestUrl = '/score?name=' + $scope.User.name + '&songName=' + $scope.User.songName;
     $http.get(requestUrl)
     .then(function(response){
-      $scope.score = $response.data;
-      console.log($scope.score);
+      $scope.score = response.data;
+      console.log(response)
     })
   };
 

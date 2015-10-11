@@ -12,7 +12,7 @@ angular.module('guitarStarApp')
                 $scope.info = data;
                 console.log(data);
                 
-            });
-            $location.path('/play');
+    });
+    $location.path('/play');
   }
 });
