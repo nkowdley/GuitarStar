@@ -18,6 +18,10 @@ angular.module('guitarStarApp', [
         templateUrl: 'app/drumset/drumset.html',
         controller: 'DrumsetController'
       })
+      .when('/score', {
+        templateUrl: 'app/scoreboard/scoreboard.html',
+        controller: 'ScoreboardController'
+      })
       .otherwise({
         redirectTo: '/'
       });
